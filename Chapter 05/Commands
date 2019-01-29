@@ -1,0 +1,14 @@
+
+samdump2
+mkdir /mnt/target1
+mount /dev/sda2 /mnt/target1  
+samdump2 SYSTEM SAM
+chntpw
+chntpw -l <sam file>
+chntpw -u <user><sam file>
+apt-get install git cmake g++ python3 python3-pip
+cd python/
+python3 setup.py install  
+root@kali:~rm /etc/ssh/ssh_host_*
+root@kali:~dpkg-reconfigure openssh-server
+root@kali:~ service ssh restart 
