@@ -1,0 +1,21 @@
+
+searchsploit 
+apt-get install kwrite
+gcc 76.c -o 76.exe
+nmap --script -updatedb
+nmap-T4 -A -sV -v3 -d -oA Targetoutput --script all --script-argsvulns.showall target.com
+nikto -h host.com -p port
+nikto -list-plugins | grep Plugin
+nikto.pl -host target.com -Plugins "apacheusers(enumerate,dictionary:users.txt);report_xml" -output apacheusers.xml
+ git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF
+ cd Mobile-Security-Framework-MobSF/
+ pip install -r requirements.txt
+ python manage.py test
+ python manage.py migrate
+ python manage.py runserver y ourIPaddress:portnumber
+ apt-get install Openvas
+ openvas-setup
+ openvas-check-setup
+ openvasmd -user=admin -new-password=YourNewPassword1
+ openvas-start
+ https://localhost:9392
