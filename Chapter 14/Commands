@@ -1,0 +1,11 @@
+
+use exploits/routers/dlink/dir_300_320_600_615_info_disclosure
+set port 80
+run
+
+screen /dev/ttyUSB0 115200
+git clone https://github.com/scateu/kalibrate-hackrf
+cd kalibrate-hackrf
+./bootstrap
+./configure
+./make && make install
