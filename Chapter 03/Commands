@@ -1,0 +1,40 @@
+
+auxiliary/fuzzers/http/http_form_field
+#nmap --spoof-mac Cisco --data-length 24 -T paranoid --max-hostgroup 1 --max-parallelism 10 -Pn -f -D 10.1.20.5,RND:5,ME -v -n -sS -sV -oA /desktop/pentest/nmap/out -p T:1-1024 --randomize-hosts 10.1.1.10 10.1.1.15
+apt-get install tor
+service tor start
+service tor status
+Firefox www.whatismyip.com
+proxychains firefox www.whatismyip.com
+whois cyberhia.com
+dmitry -winsepo output.txt example.com
+recon-ng
+dsnrecon -t std -d google.com
+auxiliary/scanner/discovery/ipv6_multicast_ping
+atk6-alive6 eth0
+traceroute www.google.com
+tracert www.google.com
+hping3
+lbd
+fragroute target.com
+Wafw00f -l
+while read r; do nc -v -z $r 1-65535; done <iplist
+while read r; do nc -v -z target $r; done < ports
+nmap -sS -O target.com
+xprobe2
+masscan 192.168.0.0/24 -p80 --banners
+ifconfig
+nmap -v -sn IPrange
+arp-scan IPrange
+fping -g IPrange
+nmap -sPIPrange
+for i in {1..254}; do ping -c 1 10.10.0.$i | grep 'from'; done
+snmpwalk -c public ipaddress  
+/auxiliary/scanner/snmp/snmpenum
+nmap --script smb-enum-users.nse -p445 <host>
+auxiliary/scanner/smb/smb_enumusers
+smbclient -I TargetIP -L administrator -N -U ""
+enum4linux.pl [options] targetip
+rpcclient -U "Vagrant" 192.168.0.129
+sparta
+nikto=Run nikto, nikto -o [OUTPUT].txt -p [PORT] -h [IP], "http,https"
