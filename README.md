@@ -1,6 +1,6 @@
 # Mastering Kali Linux for Advanced Penetration Testing - Third Edition
 
-<a href="https://www.packtpub.com/networking-and-servers/mastering-kali-linux-advanced-penetration-testing-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789340563 "><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B10935_MockupCover.png" alt="Mastering Kali Linux for Advanced Penetration Testing - Third Edition" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/networking-and-servers/mastering-kali-linux-advanced-penetration-testing-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789340563 "><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781789340563_cover.png" alt="Mastering Kali Linux for Advanced Penetration Testing - Third Edition" height="256px" align="right"></a>
 
 This is the code repository for [Mastering Kali Linux for Advanced Penetration Testing - Third Edition](https://www.packtpub.com/networking-and-servers/mastering-kali-linux-advanced-penetration-testing-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789340563 ), published by Packt.
 
