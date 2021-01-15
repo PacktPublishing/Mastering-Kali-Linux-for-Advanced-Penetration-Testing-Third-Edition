@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this product for only $5 on PacktPub.com](https://www.packtpub.com/)
------
-*The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Mastering Kali Linux for Advanced Penetration Testing - Third Edition
 
 <a href="https://www.packtpub.com/networking-and-servers/mastering-kali-linux-advanced-penetration-testing-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789340563 "><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781789340563_cover.png" alt="Mastering Kali Linux for Advanced Penetration Testing - Third Edition" height="256px" align="right"></a>
